@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "5e7ef85d-0356-4d1a-ace3-1185c96e6b4e",
+		"name": "Siemens Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "validate normal  user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Luke\",\r\n    \"password\": \"Skywalker\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/User/authenticate",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"User",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "calculate discount for normal user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pricePerGm\": 10,\r\n    \"weight\": 10,\r\n    \"total\": 0,\r\n    \"userType\":0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/Price/calculate",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"Price",
+						"calculate"
+					]
+				},
+				"description": "This will calculate the discounted price for the normal user."
+			},
+			"response": []
+		},
+		{
+			"name": "validate priviledge user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Luke2\",\r\n    \"password\": \"Skywalker2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/User/authenticate",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"User",
+						"authenticate"
+					]
+				},
+				"description": "validate priviledge user."
+			},
+			"response": []
+		},
+		{
+			"name": "calculate discount for priviledge user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pricePerGm\": 10,\r\n    \"weight\": 10,\r\n    \"total\": 0,\r\n    \"userType\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/Price/calculate",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"Price",
+						"calculate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Print to pdf",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pricePerGm\": 10,\r\n    \"weight\": 10,\r\n    \"userType\": 1,\r\n    \"total\": 98,\r\n    \"username\": \"Luke2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/Print/printpdf",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"Print",
+						"printpdf"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
